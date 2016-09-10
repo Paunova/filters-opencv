@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mk.ukim.finki.filter">
 
+    <supports-screens android:resizeable="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:anyDensity="true" />
+
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
@@ -18,7 +24,8 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

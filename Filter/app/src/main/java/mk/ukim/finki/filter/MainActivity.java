@@ -1,5 +1,6 @@
 package mk.ukim.finki.filter;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -17,7 +19,7 @@ import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 
-public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2{
+public class MainActivity extends Activity implements CameraBridgeViewBase.CvCameraViewListener2{
 
     private CameraBridgeViewBase mOpenCvCameraView;
 
@@ -33,9 +35,9 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.HelloOpenCvView);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        menu.add("Menu item 1");
         return true;
     }
 
