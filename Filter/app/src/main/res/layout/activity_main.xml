@@ -11,27 +11,34 @@
         opencv:show_fps="true"
         opencv:camera_id="any" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_width="300dp"
-        android:layout_gravity="right" >
+        android:layout_width="match_parent" >
         <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_filter1"
-            android:text="Filter1"/>
+            android:id="@+id/btn_filter_normal"
+            android:text="@string/filter_normal"/>
         <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/btn_filter1"
-            android:id="@+id/btn_filter2"
-            android:text="Filter2"/>
+            android:id="@+id/btn_filter_gray"
+            android:text="@string/filter_gray"/>
         <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/btn_filter2"
-            android:id="@+id/btn_filter3"
-            android:text="Filter3"/>
-    </RelativeLayout>
+            android:id="@+id/btn_filter_edge"
+            android:text="@string/filter_edge"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_filter_blur"
+            android:text="@string/filter_blur"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_filter_sharp"
+            android:text="@string/filter_sharp"/>
+    </LinearLayout>
 
 </FrameLayout>
