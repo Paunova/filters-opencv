@@ -40,5 +40,4 @@
             android:id="@+id/btn_filter_sharp"
             android:text="@string/filter_sharp"/>
     </LinearLayout>
-
 </FrameLayout>

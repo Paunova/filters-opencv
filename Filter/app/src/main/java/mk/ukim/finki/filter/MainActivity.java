@@ -25,7 +25,8 @@ import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
-public class MainActivity extends Activity implements CameraBridgeViewBase.CvCameraViewListener2{
+public class MainActivity extends Activity implements CameraBridgeViewBase.CvCameraViewListener2 {
+
     private static final int CANNY_THRESHOLD = 150;
     // threshold value for canny hysteresis
     private static final int THRESHOLD_DIFFERENCE = 20;
@@ -97,7 +98,6 @@ public class MainActivity extends Activity implements CameraBridgeViewBase.CvCam
                 selectedView = SHARPEN;
             }
         });
-
     }
 
     @Override
@@ -173,6 +173,7 @@ public class MainActivity extends Activity implements CameraBridgeViewBase.CvCam
 
     @Override
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
+
         if (selectedView == GRAYSCALE) {
             Log.d("SELECTED_VIEW", "GRAYSCALE");
             return inputFrame.gray();
